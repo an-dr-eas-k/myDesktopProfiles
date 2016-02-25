@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while sleep 10m; do
+        echo "still alive";
+done
+

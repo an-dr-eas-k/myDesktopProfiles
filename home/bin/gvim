@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "${#@}" = "1" ] && [ -e "$@" ]; then
+	dosfile=$(cygpath -w "$@");
+	echo $dosfile
+	/cygdrive/c/Program\ Files\ \(x86\)/Vim/Vim74/gvim.exe "$dosfile" &
+else
+	/cygdrive/c/Program\ Files\ \(x86\)/Vim/Vim74/gvim.exe "$@" &
+fi;
