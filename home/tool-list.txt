@@ -1,0 +1,2 @@
+* https://github.com/samhocevar/wincompose
+* http://www.heise.de/download/activaid.html
