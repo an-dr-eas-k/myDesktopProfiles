@@ -49,5 +49,8 @@ imap Ae Ä
 imap Oe Ö
 imap Ue Ü
 let g:vimrplugin_underscore = 1
+" do not write swap and backup files to current directory
+" set directory=c:\tmp\cache\vim\swapfiles\
+" set backupdir=c:\tmp\cache\vim\backupdir\
 
 " set ts=20 nowrap
