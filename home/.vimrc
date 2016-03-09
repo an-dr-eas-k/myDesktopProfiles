@@ -1,4 +1,5 @@
 set gfn=Monospace\ 9
+" set guifont=Consolas:h9
 set ic
 set smartcase
 set nosol " avoids setting the cursor at start of line on various movements
