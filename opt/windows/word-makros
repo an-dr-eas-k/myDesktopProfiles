@@ -1,0 +1,9 @@
+Sub ResizeAllTables()
+    Dim oTbl As Table
+    For Each oTbl In ActiveDocument.Tables
+        With oTbl
+            .PreferredWidthType = wdPreferredWidthPercent
+            .PreferredWidth = 100
+        End With
+    Next oTbl
+End Sub
