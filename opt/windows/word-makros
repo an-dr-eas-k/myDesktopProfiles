@@ -1,9 +1,51 @@
 Sub ResizeAllTables()
     Dim oTbl As Table
+    Dim oRow As Row
+    Dim oCell As Cell
+    Dim style_name As String
+    style_name = "TableText Header"
     For Each oTbl In ActiveDocument.Tables
         With oTbl
+            .AutoFitBehavior (wdAutoFitContent)
             .PreferredWidthType = wdPreferredWidthPercent
             .PreferredWidth = 100
+            .Rows.LeftIndent = CentimetersToPoints(0)
+            For Each oRow In oTbl.Rows
+                With oRow
+                    If oRow.IsFirst And style_exists(style_name) Then
+                        oRow.Range.Style = ActiveDocument.Styles(style_name)
+                        oRow.Range.ParagraphFormat.Alignment = wdAlignParagraphLeft
+                        oRow.Range.Cells.VerticalAlignment = wdCellAlignVerticalCenter
+                    End If
+'                    oRow.Range.Style = ActiveDocument.Styles("TableText Content")
+                    oRow.HeightRule = wdRowHeightAtLeast
+                    oRow.Height = CentimetersToPoints(0.04)
+'                    oRow.Range.ParagraphFormat.LeftIndent = CentimetersToPoints(0.4)
+'                    oRow.Range.ParagraphFormat.FirstLineIndent = CentimetersToPoints(-0.4)
+                End With
+            Next oRow
         End With
     Next oTbl
 End Sub
+
+Function style_exists(style_name As String) As Boolean
+     
+    style_exists = False
+    On Error Resume Next
+    style_exists = ActiveDocument.Styles(style_name).NameLocal = style_name
+     
+End Function
+
+Sub UpdateAllFields()
+    Dim doc As Document
+    Dim sRange As Range
+    Dim sField As Field
+
+    Set doc = ActiveDocument
+    For Each sRange In doc.StoryRanges
+        For Each sField In sRange.Fields
+            sField.Update
+        Next sField
+    Next sRange
+End Sub
+
