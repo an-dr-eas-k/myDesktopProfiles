@@ -1,0 +1,54 @@
+
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur, Scheme.Txt
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.Cur = 10,"%CUR_DIR%"
+Scheme.Txt = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%norm%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%prec%,%10%\%CUR_DIR%\%text%,%10%\%CUR_DIR%\%hand%,%10%\%CUR_DIR%\%unav%,%10%\%CUR_DIR%\%vert%,%10%\%CUR_DIR%\%hori%,%10%\%CUR_DIR%\%dia1%,%10%\%CUR_DIR%\%dia2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alte%,%10%\%CUR_DIR%\%link%"
+
+[Scheme.Cur]
+Normal.cur
+Help.cur
+Working in background.ani
+Busy.ani
+Precision select.cur
+Text.cur
+Handwriting.cur
+Unavailable.cur
+Vertical Resize.cur
+Horizontal Resize.cur
+Diagonal Resize 1.cur
+Diagonal Resize 2.cur
+Move.cur
+Alt select.cur
+Link select.ani
+
+[Scheme.Txt]
+Please Readme.txt
+Undersized.inf
+
+[Strings]
+CUR_DIR		= "cursors\UNDERSized"
+SCHEME_NAME	= "UNDERSized 1"
+norm = "Normal.cur"
+help = "Help.cur"
+work = "Working in background.ani"
+busy = "Busy.ani"
+prec = "Precision select.cur"
+text = "Text.cur"
+hand = "Handwriting.cur"
+unav = "Unavailable.cur"
+vert = "Vertical Resize.cur"
+hori = "Horizontal Resize.cur"
+dia1 = "Diagonal Resize 1.cur
+dia2 = "Diagonal Resize 2.cur"
+move = "Move.cur"
+alte = "Alt Select.cur"
+link = "Link select.ani"
