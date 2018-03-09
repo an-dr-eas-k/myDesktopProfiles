@@ -1,0 +1,17 @@
+My legal understanding is, these tools have licenses that allow business usage.
+
+* Equalizer APO 
+to adjust speaker volumes (eg reduce it for headset)
+* RDP-Manager
+* ac'tivAid
+* AltDrag
+depending on activAid might be useful to move windows
+* KatMouse
+allows scrolling of background windows 
+no longer required with win10
+* Passwordsafe
+* Freemind
+* WinCompose https://github.com/samhocevar/wincompose
+* Vim
+* busybox https://frippery.org/busybox/
+* cygwin
