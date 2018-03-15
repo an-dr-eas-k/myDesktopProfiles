@@ -98,12 +98,15 @@ cd_func ()
 alias cd=cd_func
 
 if [ -e "${init_file}" ]; then
+  IFS_TMP=${IFS}
+  IFS=$'\n'
 	currWd=`pwd`;
 	for i in `cat ${init_file}`; do
-		if [ -d $i ]; then
-			cd $i > /dev/null;
+		if [ -d "$i" ]; then
+			cd "$i" > /dev/null;
 		fi;
 	done;
+  IFS=${IFS_TMP}
 	cd $currWd;
 fi
 
@@ -112,4 +115,3 @@ if [[ $BASH_VERSION > "2.05a" ]]; then
 	bind -x '"\ew"':"cd_func --" 2>/dev/null
 #  bind -x '"\ew\":cd_func -- ;"
 fi
-
