@@ -1,13 +1,20 @@
 
 $acd_init_file = "~/.plan"
 
-$global:AcdWDs = New-Object System.Collections.ArrayList
-($global:AcdWDs).Add((get-location)) | out-null
+if ( -not (Get-Variable AcdWDs -Scope Global -ErrorAction Ignore )){
+  $global:AcdWDs = New-Object System.Collections.ArrayList
+  ($global:AcdWDs).Add((get-location)) | out-null
+}
 
 function New-Acd {
-    if ( ( $Global:AcdWDs | ? { $_.Path -eq  ( Get-Location )  } ).Count -eq 0 ) {
-      ($global:AcdWDs).Insert(0, (get-location))
-    }
+  $remIndex = ( $Global:AcdWDs | select -ExpandProperty Path ).indexof( (Get-Location | select -ExpandProperty Path ) )
+  if ($remIndex -gt 0 ){
+    $Global:AcdWDs.RemoveAt($remIndex)
+  }
+  ($global:AcdWDs).Insert(0, (get-location))
+  try {
+    $global:AcdWDs = $global:AcdWDs.GetRange(0, 10) 
+  } catch {}
 }
 
 function Do-Acd ($value) {
@@ -15,6 +22,8 @@ function Do-Acd ($value) {
   [bool]$result = [int]::TryParse($value, [ref]$returnedInt)
    if ($result -and $returnedInt -lt 0) {
     $global:AcdWDs[[Math]::Abs($value)-1] | set-location
+   } elseif ($value -eq "-i" ) {
+     Init-Acd ($acd_init_file)
    } else {
       set-location $value
    }
@@ -59,8 +68,8 @@ function Print-AcdWds
       | % {$_ -split [Environment]::NewLine} `
       | ? {$_.length -gt 0 } `
       | % { WriteTo-Pos $_ 0 ($index2++) }
-      WriteTo-Pos (" " * [Console]::BufferWidth) 0 ($index2++) 
-      WriteTo-Pos ("*" * [Console]::BufferWidth) 0 ($index2++) 
+#      WriteTo-Pos (" " * [Console]::BufferWidth) 0 ($index2++) 
+#      WriteTo-Pos ("*" * [Console]::BufferWidth) 0 ($index2++) 
       WriteTo-Pos (" " * [Console]::BufferWidth) 0 ($index2++) 
     Remove-Variable -Scope Global -Name index
     Remove-Variable -Name index2
