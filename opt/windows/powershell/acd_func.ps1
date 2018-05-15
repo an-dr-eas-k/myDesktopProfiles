@@ -17,17 +17,19 @@ function New-Acd {
 function Do-Acd ($value) {
   [int]$returnedInt = 0
   [bool]$result = [int]::TryParse($value, [ref]$returnedInt)
-   if ($result -and $returnedInt -lt 0) {
+  if ($result -and $returnedInt -lt 0) {
     $global:AcdWDs[[Math]::Abs($value)-1] | set-location
-   } elseif ($value -eq "-i" ) {
-      $global:AcdWDs = New-Object System.Collections.ArrayList
-      Init-Acd ($acd_init_file)
-   } elseif ($value -eq "-" ) {
-     do-acd -2
-   } else {
-      set-location $value
-   }
-   New-Acd
+  } elseif ($value -eq "-i" ) {
+    $global:AcdWDs = New-Object System.Collections.ArrayList
+    Init-Acd ($acd_init_file)
+  } elseif ($value -eq "-" ) {
+    do-acd -2
+  } elseif ($value -eq $null ) {
+    do-acd ~
+  } else {
+    set-location $value
+  }
+  New-Acd
 }
 
 function Init-Acd($file){
