@@ -1,19 +1,16 @@
 
 $acd_init_file = "~/.plan"
+$max_acd_size=18
 
-if ( -not (Get-Variable AcdWDs -Scope Global -ErrorAction Ignore )){
-  $global:AcdWDs = New-Object System.Collections.ArrayList
-  ($global:AcdWDs).Add((get-location)) | out-null
-}
 
 function New-Acd {
-  $remIndex = ( $Global:AcdWDs | select -ExpandProperty Path ).indexof( (Get-Location | select -ExpandProperty Path ) )
-  if ($remIndex -gt 0 ){
-    $Global:AcdWDs.RemoveAt($remIndex)
-  }
-  ($global:AcdWDs).Insert(0, (get-location))
   try {
-    $global:AcdWDs = $global:AcdWDs.GetRange(0, 10) 
+    $remIndex = ( $Global:AcdWDs | select -ExpandProperty Path ).indexof( (Get-Location | select -ExpandProperty Path ) )
+    if ($remIndex -ge 0 ){
+      $Global:AcdWDs.RemoveAt($remIndex)
+    }
+    ($global:AcdWDs).Insert(0, (get-location))
+    $global:AcdWDs = $global:AcdWDs.GetRange(0, $max_acd_size) 
   } catch {}
 }
 
@@ -23,7 +20,10 @@ function Do-Acd ($value) {
    if ($result -and $returnedInt -lt 0) {
     $global:AcdWDs[[Math]::Abs($value)-1] | set-location
    } elseif ($value -eq "-i" ) {
-     Init-Acd ($acd_init_file)
+      $global:AcdWDs = New-Object System.Collections.ArrayList
+      Init-Acd ($acd_init_file)
+   } elseif ($value -eq "-" ) {
+     do-acd -2
    } else {
       set-location $value
    }
@@ -31,6 +31,10 @@ function Do-Acd ($value) {
 }
 
 function Init-Acd($file){
+  if ( -not (Get-Variable AcdWDs -Scope Global -ErrorAction Ignore )){
+    $global:AcdWDs = New-Object System.Collections.ArrayList
+  }
+  $startWd = (pwd).Path
   $plan = get-content $file
   [array]::Reverse($plan)
   foreach ($element in $plan) {
@@ -39,6 +43,7 @@ function Init-Acd($file){
       Do-Acd ($element)
     }
   }
+  Do-Acd ($startWd) # finally we move to original dir
 }
 
 
