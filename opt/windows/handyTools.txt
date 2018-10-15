@@ -12,6 +12,18 @@ My legal understanding is, these tools have licenses that allow business usage.
 * cygwin
 * Drag To Scroll (Autohotkey Toolset)
 ** allows scrolling on relative touchpads only
+* ILSpy
+* Wireshark
+* 7Zip
+* dotnet
+* Gimp
+* Inkscape
+* LLVM
+* Nodejs
+* wkhtmltopdf
+* soapui
+* procexp
+* com0com 2.2
 
 my deprecated tools:
 * AltDrag
@@ -19,3 +31,4 @@ my deprecated tools:
 * KatMouse
 ** allows scrolling of background windows 
 ** no longer required with win10
+* PDF Creator
