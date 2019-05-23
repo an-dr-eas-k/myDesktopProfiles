@@ -24,6 +24,7 @@ My legal understanding is, these tools have licenses that allow business usage.
 * soapui
 * procexp
 * com0com 2.2
+* SciTE (single File Texteditor, https://www.scintilla.org/SciTEDownload.html)
 
 my deprecated tools:
 * AltDrag
