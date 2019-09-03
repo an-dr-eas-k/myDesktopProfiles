@@ -1,0 +1,22 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "pagedown",
+		"command": "workbench.action.terminal.scrollDownPage",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "pageup",
+		"command": "workbench.action.terminal.scrollUpPage",
+		"when": "terminalFocus"
+	}{
+		"key": "alt+w",
+		"command": "-workbench.action.terminal.toggleFindWholeWordTerminalFocus",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+w",
+		"command": "-workbench.action.terminal.toggleFindWholeWord",
+		"when": "terminalFindWidgetFocused"
+	}
+]
