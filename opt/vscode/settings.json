@@ -1,0 +1,27 @@
+{
+	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter": false,
+	"editor.insertSpaces": false,
+	"editor.codeLens": false,
+	"editor.renderIndentGuides": false,
+	"window.zoomLevel": -0.5,
+	"dotnet-test-explorer.enableTelemetry": false,
+	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+	"terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+	"csharp.unitTestDebuggingOptions": {},
+	"vssolution.trackActiveItem": true,
+	"C_Cpp.updateChannel": "Insiders",
+	"powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+	"powershell.scriptAnalysis.enable": true,
+	"extensions.ignoreRecommendations": false,
+	"workbench.editor.enablePreview": false,
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"tfvc.location": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Preview\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\tf.exe",
+	"tfs.location": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Preview\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer\\tf.exe",
+	"editor.tabSize": 2,
+	"[powershell]": {
+		"editor.defaultFormatter": "ms-vscode.powershell-preview"
+	},
+
+
+}
