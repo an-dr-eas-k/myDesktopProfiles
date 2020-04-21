@@ -1,0 +1,54 @@
+
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur, Scheme.Txt
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.Cur = 10,"%CUR_DIR%"
+Scheme.Txt = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%norm%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%prec%,%10%\%CUR_DIR%\%text%,%10%\%CUR_DIR%\%hand%,%10%\%CUR_DIR%\%unav%,%10%\%CUR_DIR%\%vert%,%10%\%CUR_DIR%\%hori%,%10%\%CUR_DIR%\%dia1%,%10%\%CUR_DIR%\%dia2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alte%,%10%\%CUR_DIR%\%link%"
+
+[Scheme.Cur]
+left_ptr.cur
+question_arrow.ani
+progress.ani
+watch.ani
+pencil.cur
+xterm.cur
+pencil.cur
+not-allowed.cur
+ns-resize.cur
+ew-resize.cur
+nwse-resize.cur
+nesw-resize.cur
+move.cur
+right_ptr.cur
+pointer.cur
+
+[Scheme.Txt]
+Readme.txt
+Comix.inf
+
+[Strings]
+CUR_DIR		= "cursors\Comix"
+SCHEME_NAME	= "Comix 1"
+norm = "left_ptr.cur"
+help = "question_arrow.ani"
+work = "progress.ani"
+busy = "watch.ani"
+prec = "pencil.cur"
+text = "xterm.cur"
+hand = "pencil.cur"
+unav = "not-allowed.cur"
+vert = "ns-resize.cur"
+hori = "ew-resize.cur"
+dia1 = "nwse-resize.cur"
+dia2 = "nesw-resize.cur"
+move = "move.cur"
+alte = "right_ptr.cur"
+link = "pointer.cur"
