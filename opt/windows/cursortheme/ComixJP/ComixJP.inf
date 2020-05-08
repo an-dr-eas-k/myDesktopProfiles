@@ -28,7 +28,7 @@ nwse-resize.cur
 nesw-resize.cur
 cell.cur
 right-arrow.cur
-alias.cur
+default-black.cur
 pirate.cur
 pointer.cur
 
@@ -53,6 +53,6 @@ dia1 = "nwse-resize.cur"
 dia2 = "nesw-resize.cur"
 move = "cell.cur"
 alte = "right-arrow.cur"
-link = "alias.cur"
+link = "default-black.cur"
 loca = "pirate.cur"
 pers = "pointer.cur"
