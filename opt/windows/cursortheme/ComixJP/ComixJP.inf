@@ -1,0 +1,58 @@
+
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur, Scheme.Txt
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.Cur = 10,"%CUR_DIR%"
+Scheme.Txt = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%norm%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%prec%,%10%\%CUR_DIR%\%text%,%10%\%CUR_DIR%\%hand%,%10%\%CUR_DIR%\%unav%,%10%\%CUR_DIR%\%vert%,%10%\%CUR_DIR%\%hori%,%10%\%CUR_DIR%\%dia1%,%10%\%CUR_DIR%\%dia2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alte%,%10%\%CUR_DIR%\%link%,%10%\%CUR_DIR%\%loca%,%10%\%CUR_DIR%\%pers%"
+
+[Scheme.Cur]
+default.cur
+help.ani
+progress.ani
+wait.ani
+crosshair.cur
+text.cur
+pencil.cur
+not-allowed.cur
+ns-resize.cur
+ew-resize.cur
+nwse-resize.cur
+nesw-resize.cur
+cell.cur
+right-arrow.cur
+alias.cur
+pirate.cur
+pointer.cur
+
+[Scheme.Txt]
+Readme.txt
+ComixJP.inf
+
+[Strings]
+CUR_DIR		= "cursors\ComixJP"
+SCHEME_NAME	= "Comix JP"
+norm = "default.cur"
+help = "help.ani"
+work = "progress.ani"
+busy = "wait.ani"
+prec = "crosshair.cur"
+text = "text.cur"
+hand = "pencil.cur"
+unav = "not-allowed.cur"
+vert = "ns-resize.cur"
+hori = "ew-resize.cur"
+dia1 = "nwse-resize.cur"
+dia2 = "nesw-resize.cur"
+move = "cell.cur"
+alte = "right-arrow.cur"
+link = "alias.cur"
+loca = "pirate.cur"
+pers = "pointer.cur"
