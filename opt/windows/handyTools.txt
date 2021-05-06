@@ -25,6 +25,7 @@ My legal understanding is, these tools have licenses that allow business usage.
 * procexp
 * com0com 2.2
 * SciTE (single File Texteditor, https://www.scintilla.org/SciTEDownload.html)
+* https://sourceforge.net/projects/screenruler/
 
 my deprecated tools:
 * AltDrag
