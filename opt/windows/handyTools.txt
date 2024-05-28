@@ -16,6 +16,7 @@ My legal understanding is, these tools have licenses that allow business usage.
 * Wireshark
 * 7Zip
 * dotnet
+* equalizerapo (https://sourceforge.net/projects/equalizerapo/postdownload)
 * Gimp
 * Inkscape
 * LLVM
