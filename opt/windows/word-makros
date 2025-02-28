@@ -49,3 +49,28 @@ Sub UpdateAllFields()
     Next sRange
 End Sub
 
+Sub ReplaceByCheckbox()
+    Selection.Find.ClearFormatting
+    Selection.Find.Replacement.ClearFormatting
+    Do
+        With Selection.Find
+            .Text = ChrW(9744) ' 9744 is the ☐ character
+            .Forward = True
+            .Wrap = wdFindStop
+            .Format = False
+            .MatchCase = False
+            .MatchWholeWord = False
+            .MatchWildcards = False
+            .MatchSoundsLike = False
+            .MatchAllWordForms = False
+        End With
+        If Selection.Find.Execute = False Then Exit Do
+        Dim objCC As ContentControl
+        If Selection.ParentContentControl Is Nothing Then
+            Set objCC = ActiveDocument.ContentControls.Add(Range:=Selection.Range, Type:=wdContentControlCheckBox)
+            objCC.Title = "checkbox by macro"
+        End If
+    Loop
+End Sub
+
+
